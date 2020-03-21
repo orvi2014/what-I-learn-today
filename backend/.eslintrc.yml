@@ -1,0 +1,38 @@
+env:
+    browser: true
+    commonjs: true
+    es6: true
+
+plugins:
+    # https://github.com/prettier/eslint-plugin-prettier
+    - eslint-plugin-prettier
+    
+extends:
+    - airbnb-base
+    - eslint-config-prettier
+    - plugin:mocha/recommended
+    - plugin:security/recommended
+
+globals:
+    Atomics: readonly
+    SharedArrayBuffer: readonly
+parserOptions:
+    ecmaVersion: 2018
+rules:
+    prettier/prettier: 2
+    no-unused-vars: 2
+    no-console: 2
+    newline-after-import: 0
+    func-names: 1
+    no-process-exit: 0
+    object-shorthand: 0
+    class-methods-use-this: 0
+    no-exports-assign: 2
+    no-inline-comments: 1
+    detect-unsafe-regex: 2
+    detect-disable-mustache-escape: 2
+    detect-no-csrf-before-method-override: 2
+    detect-non-literal-fs-filename: 2
+    detect-non-literal-regexp: 2
+
+    

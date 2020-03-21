@@ -1,4 +1,4 @@
-version: "2"
+version: "1"
 services:
     client:
         image: mhart/alpine-node:6.8.0
@@ -13,14 +13,14 @@ services:
             - api
         networks:
             - webappnetwork
-    api:
-        image: webapp-api
+    backend:
+        image: backend-api
         restart: always
         ports:
             - "9000:9000"
         volumes:
-            - ./api:/api
-            - /api/node_modules
+            - ./backend:/backend
+            - /backend/node_modules
         depends_on:
             - mongodb
         networks:
